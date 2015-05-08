@@ -13,7 +13,6 @@ class UrlMappings {
 		// For Exceptions
 		"500"(controller: "error", action: "handleObjectNotFound", exception: ObjectNotFoundException)
 		
-		
 		// REST Mapping
 		
 		// USERS
@@ -49,12 +48,12 @@ class UrlMappings {
 			action = 'showRoles'
 			method = GET
 		}
-		"/accounts/$idAccount/roles/$idRole" {
+		"/accounts/$idAccount/roles" {
 			controller = 'account'
 			action = 'addRole'
 			method = POST
 		}
-		"/accounts/$idAccount/roles" {
+		"/accounts/$idAccount/roles/$idRole" {
 			controller = 'account'
 			action = 'quitRole'
 			method = DELETE
@@ -63,11 +62,16 @@ class UrlMappings {
 		// AccessTypes
 		// ACCESS_TYPES
 		// En principio se creará, actualizará y eliminará un AccessType desde la base (habiendo uno de solo lectura y otro de ejecución)
-		"/accessTypes"(resources:"accessTypes", includes:['index', 'show'])
+		//"/accessTypes"(resources:"accessTypes", includes:['index', 'show'])
 		
 		// ROLES
 		// Los roles se navegan a travez de los accounts
-		"/roles"(resources:"roles", includes:['index', 'show'])
+		//"/roles"(resources:"roles", includes:[])
+		"/roles/$idRole/permissions" {
+			controller = 'role'
+			action = 'showPermissions'
+			method = GET
+		}
 
 		// PERMISSIONS
 		// Los permisos se navegan a travez de los accounts
@@ -78,7 +82,7 @@ class UrlMappings {
 			method = GET
 		}
 
-		// OPTIONS
+		// SYSTEM_OPTIONS
 		// Las opciones de istema se navegan a travez de los sistemas
 		"/systemOptions"(resources:"systemOptions", includes:['index', 'show'])
 		"/systemOptions/$idPermission/accessTypes" {
@@ -87,7 +91,7 @@ class UrlMappings {
 			method = GET
 		}
 
-		// SYSTEM_OPTIONS
+		// SYSTEM
 		"/systems"(resources:"systems")
 		"/systems/$idSystem/systemOptions" {
 			controller = 'system'

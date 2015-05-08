@@ -26,7 +26,7 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
-			<location>/Users/carrascoleandro/Develop/Others/workspaceGGTS/usm/target/work/plugins</location>
+			<location>/Users/carrascoleandro/Develop/Others/gitRepositories/usm/target/work/plugins</location>
 		</link>
 	</linkedResources>
 </projectDescription>
