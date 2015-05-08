@@ -43,6 +43,7 @@ class AccountService {
 	
 	//-----------------------------------------------------
 	
+	@NotTransactional
 	def getPermissions(long idAccount){
 		def account = Account.load(idAccount)
 		return account.permissions
@@ -63,6 +64,7 @@ class AccountService {
 	
 	//-----------------------------------------------------
 	
+	@NotTransactional
 	def getRoles(long idAccount){
 		def account = Account.load(idAccount)
 		return account.roles

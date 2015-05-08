@@ -6,9 +6,14 @@ class RoleController extends RestfulController {
 
 	static responseFormats = ['json', 'xml']
 	
+	def roleService
+	
 	RoleController(){
 		super(Role)
 	}
 
-    def index() { }
+	def showPermissions(long idRole){
+		def permissions = roleService.getPermissions(idRole)
+		respond permissions;
+	}
 }
