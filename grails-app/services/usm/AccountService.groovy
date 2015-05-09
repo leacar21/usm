@@ -44,9 +44,21 @@ class AccountService {
 	//-----------------------------------------------------
 	
 	@NotTransactional
-	def getPermissions(long idAccount){
-		def account = Account.load(idAccount)
-		return account.permissions
+	def getPermissions(long idAccount, long idSystem){	
+		
+		def listPermissions = null
+		
+		if (idSystem != null){
+			listPermissions = Account.findAll("from Account as account" +
+											  "join account.permissions as permision " +
+				                              "with (account.id = ?) and (permission.system.id = ?)", [idAccount, idSystem])		
+		}
+		else{
+			def account = Account.load(idAccount)
+			listPermissions = account.permissions
+		}
+		
+		return listPermissions
 	}
 	
 	def addPermission(long idAccount, Permission permission){
@@ -65,14 +77,26 @@ class AccountService {
 	//-----------------------------------------------------
 	
 	@NotTransactional
-	def getRoles(long idAccount){
-		def account = Account.load(idAccount)
-		return account.roles
+	def getRoles(long idAccount, long idSystem){
+		
+		def listRoles = null
+		
+		if (idSystem != null){
+			listRoles = Account.findAll("from Account as account" +
+										 "join account.roles as role " +
+										 "with (account.id = ?) and (role.system.id = ?)", [idAccount, idSystem])
+		}
+		else{
+			def account = Account.load(idAccount)
+			listRoles = account.roles
+		}
+		
+		return listRoles
 	}
 	
 	def addRole(long idAccount, Role role){
 		def account = Account.load(idAccount)
-		account.addToRoless(role).save()
+		account.addToRoles(role).save()
 		return account.roles
 	}
 	

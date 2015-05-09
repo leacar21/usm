@@ -6,9 +6,19 @@ class PermissionController extends RestfulController {
 
 	static responseFormats = ['json', 'xml']
 	
+	def permissionService
+	
 	PermissionController(){
 		super(Permission)
 	}
 
-    def index() { }
+	def show(long id){
+		def permission = permissionService.get(id)
+		respond permission;
+	}
+	
+	def getAccessType(long idPermission){
+		def accessType = permissionService.getAccessType(idPermission)
+		respond accessType;
+	}
 }

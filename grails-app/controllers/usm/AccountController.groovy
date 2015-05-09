@@ -26,12 +26,12 @@ class AccountController extends RestfulController {
 	
     def save(Account account){
 		def savedAccount = accountService.save(account)
-		respond account;
+		respond savedAccount;
     }
 	
 	def update(Account account){
 		def savedAccount = accountService.save(account)
-		respond account;
+		respond savedAccount;
 	}
 	
 	def delete(long id){
@@ -50,10 +50,9 @@ class AccountController extends RestfulController {
 	
 	//-----------------------------------------------------
 	
-	def showPermissions(long idAccount){
-		def permissions = accountService.getPermissions(idAccount)
+	def showPermissions(long idAccount, long idSystem){
+		def permissions = accountService.getPermissions(idAccount, idSystem)
 		respond permissions;
-
 	}
 	
 	def addPermission(long idAccount, Permission permission){
@@ -68,8 +67,8 @@ class AccountController extends RestfulController {
 	
 	//-----------------------------------------------------
 	
-	def showRoles(long idAccount){
-		def roles = accountService.getRoles(idAccount)
+	def showRoles(long idAccount, long idSystem){
+		def roles = accountService.getRoles(idAccount, idSystem)
 		respond roles;
 	}
 	

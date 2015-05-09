@@ -75,7 +75,7 @@ class UrlMappings {
 
 		// PERMISSIONS
 		// Los permisos se navegan a travez de los accounts
-		"/permissions"(resources:"permissions", includes:['index', 'show'])
+		"/permissions"(resources:"permissions", includes:['show'])
 		"/permissions/$idPermission/accessType" {
 			controller = 'permission'
 			action = 'showAccessType'
@@ -84,8 +84,8 @@ class UrlMappings {
 
 		// SYSTEM_OPTIONS
 		// Las opciones de istema se navegan a travez de los sistemas
-		"/systemOptions"(resources:"systemOptions", includes:['index', 'show'])
-		"/systemOptions/$idPermission/accessTypes" {
+		"/systemOptions"(resources:"systemOptions", includes:['show'])
+		"/systemOptions/$idSystemOption/accessTypes" {
 			controller = 'systemOption'
 			action = 'showAccessTypes'
 			method = GET

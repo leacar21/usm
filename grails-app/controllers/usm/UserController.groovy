@@ -12,8 +12,8 @@ class UserController extends RestfulController {
 	
     UserService userService;
 	
-    def index(String name){
-		def listUsers = userService.getAll(name)
+    def index(String firstName, String lastName){
+		def listUsers = userService.getAll(firstName, lastName)
         respond listUsers;
     }
 
