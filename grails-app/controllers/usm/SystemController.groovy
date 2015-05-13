@@ -72,40 +72,7 @@ class SystemController extends RestfulController {
 		def accessTypes = systemService.quitAccessType(idSystem, idAccessType)
 		respond accessTypes
 	}
-	
-	
+		
 	//-----------------------------------------------------
 	
-//	// SYSTEM
-//	"/systems"(resources:"systems")
-//	"/systems/$idSystem/systemOptions" {
-//		controller = 'system'
-//		action = 'showSystemOptions'
-//		method = GET
-//	}
-//	"/systems/$idSystem/systemOptions" {
-//		controller = 'system'
-//		action = 'addSystemOption'
-//		method = POST
-//	}
-//	"/systems/$idSystem/systemOptions/$idSystemOption" {
-//		controller = 'system'
-//		action = 'quitSystemOption'
-//		method = DELETE
-//	}
-//	"/systems/$idSystem/accessTypes" {
-//		controller = 'system'
-//		action = 'showAccessTypes'
-//		method = GET
-//	}
-//	"/systems/$idSystem/accessTypes" {
-//		controller = 'system' qw
-//		action = 'addAccessTypes'
-//		method = POST
-//	}
-//	"/systems/$idSystem/accessTypes" {
-//		controller = 'system'
-//		action = 'quitAccessTypes'
-//		method = DELETE
-//	}
 }

@@ -56,7 +56,7 @@ class SystemService {
 	def quitSystemOption(long idSystem, long idSystemOption){
 		def system = System.load(idSystem)
 		def systemOption = SystemOption.load(idSystemOption)
-		system.deleteFromSystemOptions(systemOption).save()
+		system.removeFromSystemOptions(systemOption).save()
 		return system.systemOptions
 	}
 	
@@ -77,7 +77,7 @@ class SystemService {
 	def quitAccessType(long idSystem, long idAccessType){
 		def system = System.load(idSystem)
 		def accessType = AccessType.load(idAccessType)
-		system.deleteFromAccessTypes(accessType).save()
+		system.removeFromAccessTypes(accessType).save()
 		return system.accessTypes
 	}
 	

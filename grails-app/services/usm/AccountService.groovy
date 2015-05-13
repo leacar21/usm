@@ -48,7 +48,7 @@ class AccountService {
 		
 		def listPermissions = null
 		
-		if (idSystem != null){
+		if ((idSystem != null) && (idSystem > 0)){
 			listPermissions = Account.findAll("from Account as account" +
 											  "join account.permissions as permision " +
 				                              "with (account.id = ?) and (permission.system.id = ?)", [idAccount, idSystem])		
@@ -62,16 +62,17 @@ class AccountService {
 	}
 	
 	def addPermission(long idAccount, Permission permission){
-		def account = Account.load(idAccount)
+		Account account = Account.get(idAccount)
 		account.addToPermissions(permission).save()
-		return account.permissions
+		return account
 	}
 	
 	def quitPermission(long idAccount, long idPermission){
-		def account = Account.load(idAccount)
-		def permission = Permission.load(idPermission)
-		account.deleteFromPermissions(permission).save()
-		return account.permissions
+		def account = Account.get(idAccount)
+		def permission = Permission.get(idPermission)
+		account.removeFromPermissions(permission).save()
+		permission.delete()
+		return account
 	}
 	
 	//-----------------------------------------------------
@@ -81,7 +82,7 @@ class AccountService {
 		
 		def listRoles = null
 		
-		if (idSystem != null){
+		if ((idSystem != null) && (idSystem > 0)){
 			listRoles = Account.findAll("from Account as account" +
 										 "join account.roles as role " +
 										 "with (account.id = ?) and (role.system.id = ?)", [idAccount, idSystem])
@@ -97,14 +98,15 @@ class AccountService {
 	def addRole(long idAccount, Role role){
 		def account = Account.load(idAccount)
 		account.addToRoles(role).save()
-		return account.roles
+		return account
 	}
 	
 	def quitRole(long idAccount, long idRole){
 		def account = Account.load(idAccount)
 		def role = Role.load(idRole)
-		account.deleteFromRoles(role).save()
-		return account.roles
+		account.removeFromRoles(role).save()
+		role.delete()
+		return account
 	}
 	
 	//-----------------------------------------------------
