@@ -1,0 +1,4 @@
+*.class
+/asset/
+/grails/
+/usm/
