@@ -105,7 +105,6 @@ class AccountService {
 		def account = Account.load(idAccount)
 		def role = Role.load(idRole)
 		account.removeFromRoles(role).save()
-		role.delete()
 		return account
 	}
 	

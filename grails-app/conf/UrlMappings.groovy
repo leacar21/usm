@@ -49,16 +49,19 @@ class UrlMappings {
 //			action = 'quitPermission'
 //			method = DELETE
 //		}
+		"/accounts/$idAccount/roles"(controller:"account", action: "showRoles", method: "GET")
 //		"/accounts/$idAccount/roles" {
 //			controller = 'account'
 //			action = 'showRoles'
 //			method = GET
 //		}
+		"/accounts/$idAccount/roles"(controller:"account", action: "addRole", method: "POST")
 //		"/accounts/$idAccount/roles" {
 //			controller = 'account'
 //			action = 'addRole'
 //			method = POST
 //		}
+		"/accounts/$idAccount/roles/$idRole"(controller:"account", action: "quitRole", method: "DELETE")
 //		"/accounts/$idAccount/roles/$idRole" {
 //			controller = 'account'
 //			action = 'quitRole'
