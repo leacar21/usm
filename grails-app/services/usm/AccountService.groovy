@@ -49,9 +49,12 @@ class AccountService {
 		def listPermissions = null
 		
 		if ((idSystem != null) && (idSystem > 0)){
-			listPermissions = Account.findAll("from Account as account" +
+			/*listPermissions = Account.findAll("from Account as account" +
 											  "join account.permissions as permision " +
-				                              "with (account.id = ?) and (permission.system.id = ?)", [idAccount, idSystem])		
+				                              "with (account.id = ?) and (permission.system.id = ?)", [idAccount, idSystem])*/
+			def account = Account.load(idAccount)
+			listPermissions = account.permissions
+			listPermissions = listPermissions.findAll{ it.system.id == idSystem }
 		}
 		else{
 			def account = Account.load(idAccount)
@@ -83,9 +86,12 @@ class AccountService {
 		def listRoles = null
 		
 		if ((idSystem != null) && (idSystem > 0)){
-			listRoles = Account.findAll("from Account as account" +
-										 "join account.roles as role " +
-										 "with (account.id = ?) and (role.system.id = ?)", [idAccount, idSystem])
+			/*listRoles = Account.findAll("from Account as account " +
+									  "join account.roles as role " +
+									  "where (account.id = ?) and (role.system.id = ?)", [idAccount, idSystem])*/
+			def account = Account.load(idAccount)
+			listRoles = account.roles
+			listRoles = listRoles.findAll{ it.system.id == idSystem }
 		}
 		else{
 			def account = Account.load(idAccount)
