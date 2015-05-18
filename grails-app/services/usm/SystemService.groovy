@@ -35,20 +35,67 @@ class SystemService {
     }
 	
 	def delete(long id) {
-		def system = System.load(id)
+		def system = System.get(id)
+
+		// Deslinkeo los Account de los Roles a eliminar
+		system.roles.each{ role ->
+			def listAccount = Account.findAll()//{ account -> account.roles.contains(role)}
+			listAccount.each{ account ->
+				account.removeFromRoles(role)
+			}
+		}
+		
+		// Deslinkeo los Account y Roles de los Permissions a eliminar
+		def listPermissionsToDelete = []
+		Account.findAll().each{ account ->
+			def listPermissions = account.permissions.findAll{ permission -> permission.system.id = system.id }
+			listPermissions.each{ permission
+				account.removeFromPermissions(permission)
+				listPermissionsToDelete.add(permission)
+			}
+		}
+		Role.findAll().each{ role ->
+			def listPermissions = role.permissions.findAll{ permission -> permission.system.id = system.id }
+			listPermissions.each{ permission
+				role.removeFromPermissions(permission)
+				listPermissionsToDelete.add(permission)
+			}
+		}
+		
+		// Elimino los Permissions
+		Iterator itrP = listPermissionsToDelete.iterator()
+		while(itrP.hasNext()){
+			def permission = itrP.next()
+			itrP.remove()
+			permission.delete()
+		}
+
+		// Obtengo los AccessTypes, para luego eliminarlos
+		def listAccessTypesToDelete = system.accessTypes
+		
+		// Elimino el Systems (que elimina en cascada Roles y SystemOptions)
 		system.delete()
+		
+		// Elimino los AccessTypes
+		Iterator itrAT = listAccessTypesToDelete.iterator()
+		while(itrAT.hasNext()){
+			def accessType = itrAT.next()
+			itrAT.remove()
+			accessType.delete()
+		}
+		
 	}
 	
 	//-----------------------------------------------------
 	
 	@NotTransactional
-	def getSystemOption(long idSystem){
+	def getSystemOptions(long idSystem){
 		def system = System.load(idSystem)
-		return listSystemOptions = system.systemOptions
+		return system.systemOptions
 	}
 	
 	def addSystemOption(long idSystem, SystemOption systemOption){
-		def system = System.load(isSystem)
+		def system = System.load(idSystem)
 		system.addToSystemOptions(systemOption).save()
 		return system.systemOptions
 	}
@@ -65,11 +112,11 @@ class SystemService {
 	@NotTransactional
 	def getAccessTypes(long idSystem){
 		def system = System.load(idSystem)
-		return listAccessTypes = system.accessTypes
+		return system.accessTypes
 	}
 	
 	def addAccessType(long idSystem, AccessType accessType){
-		def system = System.load(isSystem)
+		def system = System.load(idSystem)
 		system.addToAccessTypes(accessType).save()
 		return system.accessTypes
 	}

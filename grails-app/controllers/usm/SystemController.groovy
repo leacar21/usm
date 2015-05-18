@@ -42,33 +42,33 @@ class SystemController extends RestfulController {
 	//-----------------------------------------------------
 	
 	def showSystemOptions(long idSystem){
-		def systemOptions = systemService.getSystemOption(idSystem)
+		def systemOptions = systemService.getSystemOptions(idSystem)
 		respond systemOptions;
 	}
 	
-	def addSystemOptions(long idSystem, SystemOption systemOption){
+	def addSystemOption(long idSystem, SystemOption systemOption){
 		def systemOptions = systemService.addSystemOption(idSystem, systemOption)
 		respond systemOptions
 	}
 	
-	def quitSystemOptions(long idSystem, long idSystemOption){
+	def quitSystemOption(long idSystem, long idSystemOption){
 		def systemOptions = systemService.quitSystemOption(idSystem, idSystemOption)
 		respond systemOptions
 	}
 	
 	//-----------------------------------------------------
 	
-	def showAccessType(long idSystem){
+	def showAccessTypes(long idSystem){
 		def accessTypes = systemService.getAccessTypes(idSystem)
 		respond accessTypes;
 	}
 	
-	def addAccessTypes(long idSystem, AccessType accessType){
+	def addAccessType(long idSystem, AccessType accessType){
 		def accessTypes = systemService.addAccessType(idSystem, accessType)
 		respond accessTypes
 	}
 	
-	def quitAccessTypes(long idSystem, long idAccessType){
+	def quitAccessType(long idSystem, long idAccessType){
 		def accessTypes = systemService.quitAccessType(idSystem, idAccessType)
 		respond accessTypes
 	}

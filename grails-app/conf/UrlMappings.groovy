@@ -26,47 +26,12 @@ class UrlMappings {
 		// Se permite objener, agregar y quitar los Permission y los Role de un account
 		"/accounts"(resources:"account")
 		"/accounts/$idAccount/user"(controller:"account", action: "showUser", method: "GET")
-//		"/accounts/$idAccount/user" {
-//			controller = 'account'
-//			action = 'showUser'
-//			method = GET
-//		}
 		"/accounts/$idAccount/permissions"(controller:"account", action: "showPermissions", method: "GET")
-//		"/accounts/$idAccount/permissions" {
-//			controller = 'account'
-//			action = 'showPermissions'
-//			method = POST
-//		}
 		"/accounts/$idAccount/permissions"(controller:"account", action: "addPermission", method: "POST")
-//		"/accounts/$idAccount/permissions" {
-//			controller = 'account'
-//			action = 'addPermission'
-//			method = POST
-//		}
 		"/accounts/$idAccount/permissions/$idPermission"(controller:"account", action: "quitPermission", method: "DELETE")
-//		"/accounts/$idAccount/permissions/$idPermission" {
-//			controller = 'account'
-//			action = 'quitPermission'
-//			method = DELETE
-//		}
 		"/accounts/$idAccount/roles"(controller:"account", action: "showRoles", method: "GET")
-//		"/accounts/$idAccount/roles" {
-//			controller = 'account'
-//			action = 'showRoles'
-//			method = GET
-//		}
 		"/accounts/$idAccount/roles"(controller:"account", action: "addRole", method: "POST")
-//		"/accounts/$idAccount/roles" {
-//			controller = 'account'
-//			action = 'addRole'
-//			method = POST
-//		}
 		"/accounts/$idAccount/roles/$idRole"(controller:"account", action: "quitRole", method: "DELETE")
-//		"/accounts/$idAccount/roles/$idRole" {
-//			controller = 'account'
-//			action = 'quitRole'
-//			method = DELETE
-//		}
 
 		// AccessTypes
 		// ACCESS_TYPES
@@ -79,69 +44,24 @@ class UrlMappings {
 		"/roles/$idRole/permissions"(controller:"role", action: "showPermissions", method: "GET")
 		"/roles/$idRole/permissions"(controller:"role", action: "addPermission", method: "POST")
 		"/roles/$idRole/permissions/$idPermission"(controller:"role", action: "quitPermission", method: "DELETE")
-//		"/roles/$idRole/permissions" {
-//			controller = 'role'
-//			action = 'showPermissions'
-//			method = GET
-//		}
-//
-//		// PERMISSIONS
-//		// Los permisos se navegan a travez de los accounts
+
+		// PERMISSIONS
+		// Los permisos se navegan a travez de los accounts
 		"/permissions"(resources:"permission", includes:['show'])
 		"/permissions/$idPermission/accessType"(controller:"permission", action: "showAccessType", method: "GET")
-//		"/permissions/$idPermission/accessType" {
-//			controller = 'permission'
-//			action = 'showAccessType'
-//			method = GET
-//		}
-//
-//		// SYSTEM_OPTIONS
-//		// Las opciones de istema se navegan a travez de los sistemas
+
+		// SYSTEM_OPTIONS
+		// Las opciones de istema se navegan a travez de los sistemas
 		"/systemOptions"(resources:"systemOption", includes:['show'])
 		"/systemOptions/$idSystemOption/accessTypes"(controller:"systemOption", action: "showAccessTypes", method: "GET")
-//		"/systemOptions/$idSystemOption/accessTypes" {
-//			controller = 'systemOption'
-//			action = 'showAccessTypes'
-//			method = GET
-//		}
-//
-//		// SYSTEM
+
+		// SYSTEM
 		"/systems"(resources:"system")
 		"/systems/$idSystem/systemOptions"(controller:"system", action: "showSystemOptions", method: "GET")
-//		"/systems/$idSystem/systemOptions" {
-//			controller = 'system'
-//			action = 'showSystemOptions'
-//			method = GET
-//		}
 		"/systems/$idSystem/systemOptions"(controller:"system", action: "addSystemOption", method: "POST")
-//		"/systems/$idSystem/systemOptions" {
-//			controller = 'system'
-//			action = 'addSystemOption'
-//			method = POST
-//		}
 		"/systems/$idSystem/systemOptions/$idSystemOption"(controller:"system", action: "quitSystemOption", method: "DELETE")
-//		"/systems/$idSystem/systemOptions/$idSystemOption" {
-//			controller = 'system'
-//			action = 'quitSystemOption'
-//			method = DELETE
-//		}
 		"/systems/$idSystem/accessTypes"(controller:"system", action: "showAccessTypes", method: "GET")
-//		"/systems/$idSystem/accessTypes" {
-//			controller = 'system'
-//			action = 'showAccessTypes'
-//			method = GET
-//		}
-		"/systems/$idSystem/accessTypes"(controller:"system", action: "addAccessTypes", method: "POST")
-//		"/systems/$idSystem/accessTypes" {
-//			controller = 'system'
-//			action = 'addAccessTypes'
-//			method = POST
-//		}
-		"/systems/$idSystem/accessTypes"(controller:"system", action: "quitAccessTypes", method: "DELETE")
-//		"/systems/$idSystem/accessTypes/$idAccessType" {
-//			controller = 'system'
-//			action = 'quitAccessTypes'
-//			method = DELETE
-//		}
+		"/systems/$idSystem/accessTypes"(controller:"system", action: "addAccessType", method: "POST")
+		"/systems/$idSystem/accessTypes/$idAccessType"(controller:"system", action: "quitAccessType", method: "DELETE")
 	}
 }
