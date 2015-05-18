@@ -17,8 +17,8 @@ class SystemOptionController extends RestfulController {
 		respond systemOption;
 	}
 	
-	def showAccessType(long idSystemOption){
+	def showAccessTypes(long idSystemOption){
 		def accessTypes = systemOptionService.getAccessTypes(idSystemOption)
-		return accessTypes
+		respond accessTypes
 	}
 }

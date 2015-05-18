@@ -6,10 +6,16 @@ class PermissionController extends RestfulController {
 
 	static responseFormats = ['json', 'xml']
 	
-	def permissionService
-	
 	PermissionController(){
 		super(Permission)
+	}
+	
+	PermissionService permissionService
+	
+	//-----------------------------------------------------
+	
+	def index(String name){
+		respond null, [status: 200]
 	}
 
 	def show(long id){
@@ -17,7 +23,21 @@ class PermissionController extends RestfulController {
 		respond permission;
 	}
 	
-	def getAccessType(long idPermission){
+	def save(Account account){
+		respond null, [status: 200]
+	}
+	
+	def update(Account account){
+		respond null, [status: 200]
+	}
+	
+	def delete(long id){
+		respond null, [status: 200]
+	}
+
+	//-----------------------------------------------------
+	
+	def showAccessType(long idPermission){
 		def accessType = permissionService.getAccessType(idPermission)
 		respond accessType;
 	}

@@ -75,7 +75,10 @@ class UrlMappings {
 		
 		// ROLES
 		// Los roles se navegan a travez de los accounts
-		//"/roles"(resources:"roles", includes:[])
+		"/roles"(resources:"role", includes:['index', 'show', 'save', 'delete'])
+		"/roles/$idRole/permissions"(controller:"role", action: "showPermissions", method: "GET")
+		"/roles/$idRole/permissions"(controller:"role", action: "addPermission", method: "POST")
+		"/roles/$idRole/permissions/$idPermission"(controller:"role", action: "quitPermission", method: "DELETE")
 //		"/roles/$idRole/permissions" {
 //			controller = 'role'
 //			action = 'showPermissions'
@@ -84,7 +87,8 @@ class UrlMappings {
 //
 //		// PERMISSIONS
 //		// Los permisos se navegan a travez de los accounts
-//		"/permissions"(resources:"permissions", includes:['show'])
+		"/permissions"(resources:"permission", includes:['show'])
+		"/permissions/$idPermission/accessType"(controller:"permission", action: "showAccessType", method: "GET")
 //		"/permissions/$idPermission/accessType" {
 //			controller = 'permission'
 //			action = 'showAccessType'
@@ -93,7 +97,8 @@ class UrlMappings {
 //
 //		// SYSTEM_OPTIONS
 //		// Las opciones de istema se navegan a travez de los sistemas
-//		"/systemOptions"(resources:"systemOptions", includes:['show'])
+		"/systemOptions"(resources:"systemOption", includes:['show'])
+		"/systemOptions/$idSystemOption/accessTypes"(controller:"systemOption", action: "showAccessTypes", method: "GET")
 //		"/systemOptions/$idSystemOption/accessTypes" {
 //			controller = 'systemOption'
 //			action = 'showAccessTypes'
@@ -101,32 +106,38 @@ class UrlMappings {
 //		}
 //
 //		// SYSTEM
-//		"/systems"(resources:"systems")
+		"/systems"(resources:"system")
+		"/systems/$idSystem/systemOptions"(controller:"system", action: "showSystemOptions", method: "GET")
 //		"/systems/$idSystem/systemOptions" {
 //			controller = 'system'
 //			action = 'showSystemOptions'
 //			method = GET
 //		}
+		"/systems/$idSystem/systemOptions"(controller:"system", action: "addSystemOption", method: "POST")
 //		"/systems/$idSystem/systemOptions" {
 //			controller = 'system'
 //			action = 'addSystemOption'
 //			method = POST
 //		}
+		"/systems/$idSystem/systemOptions/$idSystemOption"(controller:"system", action: "quitSystemOption", method: "DELETE")
 //		"/systems/$idSystem/systemOptions/$idSystemOption" {
 //			controller = 'system'
 //			action = 'quitSystemOption'
 //			method = DELETE
 //		}
+		"/systems/$idSystem/accessTypes"(controller:"system", action: "showAccessTypes", method: "GET")
 //		"/systems/$idSystem/accessTypes" {
 //			controller = 'system'
 //			action = 'showAccessTypes'
 //			method = GET
 //		}
+		"/systems/$idSystem/accessTypes"(controller:"system", action: "addAccessTypes", method: "POST")
 //		"/systems/$idSystem/accessTypes" {
 //			controller = 'system'
 //			action = 'addAccessTypes'
 //			method = POST
 //		}
+		"/systems/$idSystem/accessTypes"(controller:"system", action: "quitAccessTypes", method: "DELETE")
 //		"/systems/$idSystem/accessTypes/$idAccessType" {
 //			controller = 'system'
 //			action = 'quitAccessTypes'

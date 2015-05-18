@@ -55,22 +55,14 @@ class AccountController extends RestfulController {
 		respond permissions
 	}
 	
-	def addPermission(long idAccount, Permission permission){
-		//def jsonObject = request.JSON
-		//def permission = new Permission(jsonObject)
-		
-		//Permission permission = new Permission()
-		//permission.properties = getObjectToBind()
-		
-		println permission.accessType.id
-		
-		def account = accountService.addPermission(idAccount, permission)
-		respond account.permissions
+	def addPermission(long idAccount, Permission permission){		
+		def permissions = accountService.addPermission(idAccount, permission)
+		respond permissions
 	}
 	
 	def quitPermission(long idAccount, long idPermission){
-		def account = accountService.quitPermission(idAccount, idPermission)
-		respond account.permissions
+		def permissions = accountService.quitPermission(idAccount, idPermission)
+		respond permissions
 	}
 	
 	//-----------------------------------------------------
@@ -81,13 +73,13 @@ class AccountController extends RestfulController {
 	}
 	
 	def addRole(long idAccount, Role role){
-		def account = accountService.addRole(idAccount, role)
-		respond account.roles
+		def roles = accountService.addRole(idAccount, role)
+		respond roles
 	}
 	
 	def quitRole(long idAccount, long idRole){
-		def account = accountService.quitRole(idAccount, idRole)
-		respond account.roles
+		def roles = accountService.quitRole(idAccount, idRole)
+		respond roles
 	}
 	
 	//-----------------------------------------------------

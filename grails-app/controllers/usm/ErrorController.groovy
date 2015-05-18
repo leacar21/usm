@@ -9,4 +9,5 @@ class ErrorController {
     def handleObjectNotFound() {
 		response.sendError(404)
 	}
+	
 }

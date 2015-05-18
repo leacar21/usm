@@ -65,17 +65,17 @@ class AccountService {
 	}
 	
 	def addPermission(long idAccount, Permission permission){
-		Account account = Account.get(idAccount)
+		Account account = Account.load(idAccount)
 		account.addToPermissions(permission).save()
-		return account
+		return account.permissions
 	}
 	
 	def quitPermission(long idAccount, long idPermission){
-		def account = Account.get(idAccount)
-		def permission = Permission.get(idPermission)
+		def account = Account.load(idAccount)
+		def permission = Permission.load(idPermission)
 		account.removeFromPermissions(permission).save()
 		permission.delete()
-		return account
+		return account.permissions
 	}
 	
 	//-----------------------------------------------------
@@ -104,14 +104,14 @@ class AccountService {
 	def addRole(long idAccount, Role role){
 		def account = Account.load(idAccount)
 		account.addToRoles(role).save()
-		return account
+		return account.roles
 	}
 	
 	def quitRole(long idAccount, long idRole){
 		def account = Account.load(idAccount)
 		def role = Role.load(idRole)
 		account.removeFromRoles(role).save()
-		return account
+		return account.roles
 	}
 	
 	//-----------------------------------------------------
