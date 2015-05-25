@@ -1,102 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>User Security Manager</title>
-	<meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+<html lang="en" ng-app="StarterApp">
+  <head>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <meta name="viewport" content="initial-scale=1" />
+  </head>
+  <body layout="column" ng-controller="AppCtrl">
+    <md-toolbar layout="row">
+      <button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button menuBtn">
+        <span class="md-visually-hidden">Menu</span>
+      </button>
+      <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello World</h1>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
 
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        </md-sidenav>
+        <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
+            </md-content>
+        </div>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.js"></script>
-
-	<link rel="stylesheet" href="stylesheets/main.css">
-</head>
-<body>
-	<header class="row">
-		<h1 class="col-md-12 large-margin">User Security Manager</h1>
-	</header>
-
-	<section class="row">
-		<div class="col-md-12">
-
-			<!-- ==================================================================================================================== -->
-
-			<!-- Nav tabs -->
-			<div class="row large-margin">
-				<div class="col-md-12">
-
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Accounts</a></li>
-						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Systems</a></li>
-					</ul>
-
-					<!-- =========================== TAB Accounts ============================= -->
-
-					<!-- Tab panes -->
-					<div class="tab-content gray-border-left gray-border-right gray-border-bottom">
-						<div role="tabpanel" class="tab-pane active" id="home">
-							<div class="row container large-margin-left large-padding-top large-margin-bottom">
-								<div class="col-md-12">
-
-									<div class="filterContent" id="accountFilterForm" name="accountFilterForm">
-										<form class="row">
-											<div class="form-group col-md-3">
-												<label for="accountFilterUserNameInput">User Name</label>
-												<input type="text" class="form-control" id="accountFilterUserNameInput" placeholder="Enter User Name">
-											</div>
-											<div class="form-group col-md-3">
-												<label for="accountFilterFirstNameInput">First Name</label>
-												<input type="text" class="form-control" id="accountFilterFirstNameInput" placeholder="Enter First Name">
-											</div>
-											<div class="form-group col-md-3">
-												<label for="accountFilterLasNameInput">Last Name</label>
-												<input type="text" class="form-control" id="accountFilterLasNameInput" placeholder="Enter Last Name">
-											</div>
-											<div class="form-group col-md-3">
-												<label for="accountFilterEmailInput">Email</label>
-												<input type="email" class="form-control" id="accountFilterEmailInput" placeholder="Enter Email">
-											</div>
-										</form>
-									</div>
-
-
-								</div>
-							</div>
-						</div>
-
-						<!-- =========================== TAB Systems ============================= -->
-
-						<div role="tabpanel" class="tab-pane" id="profile">
-							<div class="row container large-margin-left large-padding-top large-margin-bottom">
-								<div class="col-md-12">
-									Systems
-								</div>
-							</div>
-						</div>
-
-						<!-- ===================================================================== -->
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<!-- ==================================================================================================================== -->
-
-		</div>
-	</section>
-
-	<footer class="row">
-		<h5 class="col-md-12 large-margin">Leandro Carrasco - 2015</h5>
-	</footer>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.js"></script>
+  </body>
 </html>
