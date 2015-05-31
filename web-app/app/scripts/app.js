@@ -30,9 +30,18 @@
 
   //------------------------------------------------------
 
+  function configTheme($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('orange');
+  };
+
+  //------------------------------------------------------
+
   angular
     .module('usm')
-    .config(config);
+    .config(config)
+    .config(configTheme);
 
   //------------------------------------------------------
 
