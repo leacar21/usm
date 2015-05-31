@@ -2,8 +2,8 @@
   'use strict';
 
   //------------------------------------------------------
- 
-  angular.module('blog', ['ngRoute', 'blog.controllers']);
+
+  angular.module('usm', ['ngMaterial', 'ngRoute', 'usm.controllers']);
 
   //------------------------------------------------------
 
@@ -12,26 +12,26 @@
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/post-list.tpl.html',
-        controller: 'PostListController',
-        controllerAs: 'postlist'
+        templateUrl: 'views/accounts.html',
+        controller: 'AccountsController',
+        controllerAs: 'accountsCtrl'
       })
-      .when('/post/:postId', {
-        templateUrl: 'views/post-detail.tpl.html',
-        controller: 'PostDetailController',
-        controllerAs: 'postdetail'
+      .when('/accounts', {
+        templateUrl: 'views/accounts.html',
+        controller: 'AccountsController',
+        controllerAs: 'accountsCtrl'
       })
-      .when('/new', {
-        templateUrl: 'views/post-create.tpl.html',
-        controller: 'PostCreateController',
-        controllerAs: 'postcreate'
+      .when('/systems', {
+        templateUrl: 'views/systems.html',
+        controller: 'SystemController',
+        controllerAs: 'systemsCtrl'
       });
   }
 
   //------------------------------------------------------
 
   angular
-    .module('blog')
+    .module('usm')
     .config(config);
 
   //------------------------------------------------------

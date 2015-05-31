@@ -19,7 +19,7 @@
 
     <!-- endinject -->
   </head>
-  <body ng-app="blog">
+  <body ng-app="usm" layout="column">
     <!--[if lt IE 8]>
         <p class="browsehappy">
         Estás usando un navegador <strong>desactualizado</strong>.
@@ -30,93 +30,53 @@
 
     <!-- ==================================================================== -->
 
-    <!-- <div class="container-fluid">
-      <div class="row">
-        <aside class="col-sm-3">
-            <a ng-href="/new">Crear Entrada</a>
-        </aside>
-        <section class="col-sm-9" ng-view></section>
-      </div>
-    </div> -->
+    <!-- Container #1 (see wireframe) -->
+     <md-toolbar layout="row" layout-padding>
+       <h1>User Security Manager</h1>
+     </md-toolbar>
 
-    <header class="row">
-  		<h1 class="col-md-12 large-margin">User Security Manager</h1>
-  	</header>
+     <!-- Container #2 -->
+     <div flex layout="row">
 
-  	<section class="row">
-  		<div class="col-md-12">
+       <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+        <md-list layout="column">
 
-  			<!-- ==================================================================================================================== -->
+          <md-item >
+              <md-button>
+                <span class="fa fa-user"></span>
+                Accounts
+              </md-button>
+          </md-item>
 
-  			<!-- Nav tabs -->
-  			<div class="row large-margin">
-  				<div class="col-md-12">
+          <md-item >
+              <md-button>
+                <span class="fa fa-cube"></span>
+                Systems
+              </md-button>
+          </md-item>
 
-  					<ul class="nav nav-tabs" role="tablist">
-  						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Accounts</a></li>
-  						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Systems</a></li>
-  					</ul>
+          <md-item >
+              <md-button>
+                <span class="fa fa-exchange"></span>
+                Activity
+              </md-button>
+          </md-item>
 
-  					<!-- =========================== TAB Accounts ============================= -->
+          <md-item >
+              <md-button>
+                <span class="fa fa-info-circle"></span>
+                About
+              </md-button>
+          </md-item>
 
-  					<!-- Tab panes -->
-  					<div class="tab-content gray-border-left gray-border-right gray-border-bottom">
-  						<div role="tabpanel" class="tab-pane active" id="home">
-  							<div class="row container large-margin-left large-padding-top large-margin-bottom">
-  								<div class="col-md-12">
+        </md-list>
+      </md-sidenav>
 
-  									<div class="filterContent" id="accountFilterForm" name="accountFilterForm">
-  										<form class="row">
-  											<div class="form-group col-md-3">
-  												<label for="accountFilterUserNameInput">User Name</label>
-  												<input type="text" class="form-control" id="accountFilterUserNameInput" placeholder="Enter User Name">
-  											</div>
-  											<div class="form-group col-md-3">
-  												<label for="accountFilterFirstNameInput">First Name</label>
-  												<input type="text" class="form-control" id="accountFilterFirstNameInput" placeholder="Enter First Name">
-  											</div>
-  											<div class="form-group col-md-3">
-  												<label for="accountFilterLasNameInput">Last Name</label>
-  												<input type="text" class="form-control" id="accountFilterLasNameInput" placeholder="Enter Last Name">
-  											</div>
-  											<div class="form-group col-md-3">
-  												<label for="accountFilterEmailInput">Email</label>
-  												<input type="email" class="form-control" id="accountFilterEmailInput" placeholder="Enter Email">
-  											</div>
-  										</form>
-  									</div>
+      <md-content flex id="content" layout-padding>
+        <section ng-view></section>
+      </md-content>
 
-
-  								</div>
-  							</div>
-  						</div>
-
-  						<!-- =========================== TAB Systems ============================= -->
-
-  						<div role="tabpanel" class="tab-pane" id="profile">
-  							<div class="row container large-margin-left large-padding-top large-margin-bottom">
-  								<div class="col-md-12">
-  									Systems
-  								</div>
-  							</div>
-  						</div>
-
-  						<!-- ===================================================================== -->
-
-  					</div>
-
-  				</div>
-
-  			</div>
-
-  			<!-- ==================================================================================================================== -->
-
-  		</div>
-  	</section>
-
-  	<footer class="row">
-  		<h5 class="col-md-12 large-margin">Leandro Carrasco - 2015</h5>
-  	</footer>
+     </div>
 
     <!-- ==================================================================== -->
 

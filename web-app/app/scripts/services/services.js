@@ -1,14 +1,14 @@
 (function () {
   'use strict';
 
-  angular.module('blog.services', ['ngResource']);
+  angular.module('usm.services', ['ngResource']);
 
-  function Post ($resource, BaseUrl) {
-    return $resource(BaseUrl + '/posts/:postId', { postId: '@_id' });
+  function Account ($resource, BaseUrl) {
+    return $resource(BaseUrl + '/accounts/:accountId', { accountId: '@_id' });
   }
 
-  function Comment ($resource, BaseUrl) {
-    return $resource(BaseUrl + '/comments/:commentId', { commentId: '@_id' });
+  function System ($resource, BaseUrl) {
+    return $resource(BaseUrl + '/systems/:systemId', { systemId: '@_id' });
   }
 
   function User ($resource, BaseUrl) {
@@ -16,10 +16,10 @@
   }
 
   angular
-    .module('blog.services')
-    .constant('BaseUrl', 'http://jsonplaceholder.typicode.com')
-    .factory('Post', Post)
-    .factory('Comment', Comment)
+    .module('usm.services')
+    .constant('BaseUrl', 'http://localhost:8080')
+    .factory('Account', Account)
+    .factory('System', System)
     .factory('User', User);
 
 })();
