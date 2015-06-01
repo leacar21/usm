@@ -25,6 +25,16 @@
         templateUrl: 'views/systems.html',
         controller: 'SystemController',
         controllerAs: 'systemsCtrl'
+      })
+      .when('/activity', {
+        templateUrl: 'views/activity.html',
+        controller: 'ActivityController',
+        controllerAs: 'activityCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutController',
+        controllerAs: 'aboutCtrl'
       });
   }
 
