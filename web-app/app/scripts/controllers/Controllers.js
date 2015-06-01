@@ -2,13 +2,6 @@
   'use strict';
 
 
-  angular
-  .module('usm.controllers', ['usm.services'])
-  .controller('AccountsController', AccountsController)
-  .controller('SystemsController', SystemsController)
-  .controller('ActivityController', ActivityController)
-  .controller('AboutController', AboutController);
-
   function AccountsController (Account) {
     this.accounts = Account.query();
   }
@@ -18,11 +11,18 @@
   }
 
   function ActivityController (System) {
-
+    this.systems = System.query();
   }
 
   function AboutController (System) {
-
+    this.systems = System.query();
   }
+
+  angular
+  .module('usm.controllers', ['usm.services'])
+  .controller('AccountsController', AccountsController)
+  .controller('SystemsController', SystemsController)
+  .controller('ActivityController', ActivityController)
+  .controller('AboutController', AboutController);
 
 })();

@@ -23,7 +23,7 @@
       })
       .when('/systems', {
         templateUrl: 'views/systems.html',
-        controller: 'SystemController',
+        controller: 'SystemsController',
         controllerAs: 'systemsCtrl'
       })
       .when('/activity', {
@@ -44,7 +44,7 @@
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
       .accentPalette('orange');
-  };
+  }
 
   //------------------------------------------------------
 
