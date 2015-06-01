@@ -15,7 +15,7 @@ var nib = require('nib');
 
 // Pre-procesa archivos Stylus a CSS y recarga los cambios
 gulp.task('css', function() {
-  gulp.src('./app/stylesheets/main.styl')
+  gulp.src('./app/stylesheets/*.styl')
     .pipe(stylus({ use: nib() }))
     .pipe(gulp.dest('./app/stylesheets'))
     .pipe(connect.reload());

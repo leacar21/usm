@@ -15,7 +15,11 @@
     <!-- endbower -->
     <!-- inject:css -->
 
+    <link rel="stylesheet" href="/stylesheets/fonts.css">
+
     <link rel="stylesheet" href="/stylesheets/main.css">
+
+    <link rel="stylesheet" href="/stylesheets/md.css">
 
     <!-- endinject -->
   </head>
@@ -42,31 +46,41 @@
         <md-list layout="column">
 
           <md-item >
+            <a ng-href="/accounts">
               <md-button>
                 <span class="fa fa-user"></span>
                 Accounts
               </md-button>
+            </a>
           </md-item>
 
+
           <md-item >
+            <a ng-href="/systems">
               <md-button>
                 <span class="fa fa-cube"></span>
                 Systems
               </md-button>
+            </a>
           </md-item>
 
+
           <md-item >
+            <a ng-href="/activity">
               <md-button>
                 <span class="fa fa-exchange"></span>
                 Activity
               </md-button>
+            </a>
           </md-item>
 
           <md-item >
+            <a ng-href="/about">
               <md-button>
                 <span class="fa fa-info-circle"></span>
                 About
               </md-button>
+            </a>  
           </md-item>
 
         </md-list>
