@@ -23,7 +23,7 @@
         </md-whiteframe>
       </md-content>
 
-      <md-content layout="column" layout-padding flex="50">
+      <md-content layout="column" layout-padding flex="60">
         <md-whiteframe class="md-whiteframe-z1" layout="column">
           <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="options">
@@ -43,11 +43,11 @@
                     </tr>
                     <tr>
                       <td>Option 2</td>
-                      <td>Acces type 2</td>
+                      <td>Access Type 2</td>
                     </tr>
                     <tr>
                       <td>Option 3</td>
-                      <td>Acces type 4</td>
+                      <td>Access Type 4</td>
                     </tr>
                   </tbody>
                 </table>
@@ -55,8 +55,57 @@
               </md-content>
             </md-tab>
             <md-tab label="roles">
-              <md-content class="md-padding">
-                TODO: ROLES
+              <md-content class="md-padding" layout="row">
+                <md-content class="md-padding" layout-padding>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Role</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Role 1</td>
+                      </tr>
+                      <tr>
+                        <td>Role 2</td>
+                      </tr>
+                      <tr>
+                        <td>Role 3</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </md-content>
+
+                <md-content class="md-padding" layout-padding>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Option</th>
+                        <th>Access Type</th>
+                        <th>Enabled</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Option 1</td>
+                        <td>Access Type 1</td>
+                        <td><md-switch ng-model="true" class="md-primary"></md-switch></td>
+                      </tr>
+                      <tr>
+                        <td>Option 2</td>
+                        <td>Access Type 2</td>
+                        <td><md-switch ng-model=""></md-switch></td>
+                      </tr>
+                      <tr>
+                        <td>Option 3</td>
+                        <td>Access Type 3</td>
+                        <td><md-switch ng-model=""></md-switch></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </md-content>
+
               </md-content>
             </md-tab>
           </md-tabs>
