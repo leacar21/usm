@@ -7,6 +7,8 @@
   }
 
   function SystemsController (System) {
+
+    this.selectedRole = 'Role1';
     this.systems = System.query();
   }
 

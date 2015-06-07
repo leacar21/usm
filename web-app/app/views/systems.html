@@ -28,7 +28,6 @@
           <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="options">
               <md-content class="md-padding">
-
                 <table>
                   <thead>
                     <tr>
@@ -51,33 +50,34 @@
                     </tr>
                   </tbody>
                 </table>
-
               </md-content>
             </md-tab>
             <md-tab label="roles">
               <md-content class="md-padding" layout="row">
                 <md-content class="md-padding" layout-padding>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Role</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Role 1</td>
-                      </tr>
-                      <tr>
-                        <td>Role 2</td>
-                      </tr>
-                      <tr>
-                        <td>Role 3</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <md-radio-group ng-model="systemsCtrl.selectedRole">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Role</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><md-radio-button value="Role1" class="md-primary">Role 1</md-radio-button></td>
+                        </tr>
+                        <tr>
+                          <td><md-radio-button value="Role2" class="md-primary">Role 2</md-radio-button></td>
+                        </tr>
+                        <tr>
+                          <td><md-radio-button value="Role3" class="md-primary">Role 3</md-radio-button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </md-radio-group>
                 </md-content>
 
-                <md-content class="md-padding" layout-padding>
+                <md-content class="md-padding" layout-padding ng-hide="systemsCtrl.selectedRole != 'Role1'">
                   <table>
                     <thead>
                       <tr>
@@ -88,17 +88,75 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Option 1</td>
+                        <td>Option 1 - Role 1</td>
                         <td>Access Type 1</td>
                         <td><md-switch ng-model="true" class="md-primary"></md-switch></td>
                       </tr>
                       <tr>
-                        <td>Option 2</td>
+                        <td>Option 2 - Role 1</td>
                         <td>Access Type 2</td>
                         <td><md-switch ng-model=""></md-switch></td>
                       </tr>
                       <tr>
-                        <td>Option 3</td>
+                        <td>Option 3 - Role 1</td>
+                        <td>Access Type 3</td>
+                        <td><md-switch ng-model=""></md-switch></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </md-content>
+
+                <md-content class="md-padding" layout-padding ng-hide="systemsCtrl.selectedRole != 'Role2'">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Option</th>
+                        <th>Access Type</th>
+                        <th>Enabled</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Option 1 - Role 2</td>
+                        <td>Access Type 1</td>
+                        <td><md-switch ng-model="true" class="md-primary"></md-switch></td>
+                      </tr>
+                      <tr>
+                        <td>Option 2 - Role 2</td>
+                        <td>Access Type 2</td>
+                        <td><md-switch ng-model=""></md-switch></td>
+                      </tr>
+                      <tr>
+                        <td>Option 3 - Role 2</td>
+                        <td>Access Type 3</td>
+                        <td><md-switch ng-model=""></md-switch></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </md-content>
+
+                <md-content class="md-padding" layout-padding ng-hide="systemsCtrl.selectedRole != 'Role3'">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Option</th>
+                        <th>Access Type</th>
+                        <th>Enabled</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Option 1 - Role 3</td>
+                        <td>Access Type 1</td>
+                        <td><md-switch ng-model="true" class="md-primary"></md-switch></td>
+                      </tr>
+                      <tr>
+                        <td>Option 2 - Role 3</td>
+                        <td>Access Type 2</td>
+                        <td><md-switch ng-model=""></md-switch></td>
+                      </tr>
+                      <tr>
+                        <td>Option 3 - Role 3</td>
                         <td>Access Type 3</td>
                         <td><md-switch ng-model=""></md-switch></td>
                       </tr>

@@ -5,6 +5,9 @@ md-sidenav.md-closed.md-locked-open-add-active {
   width: 10% !important;
   max-width: 300px !important;
 }
+td md-switch {
+  margin: 0px !important;
+}
 .buttonAlignLeft {
   text-align: left !important;
 }
