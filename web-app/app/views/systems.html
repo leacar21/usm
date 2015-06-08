@@ -50,6 +50,20 @@
                     </tr>
                   </tbody>
                 </table>
+
+                <md-select placeholder="Option" ng-model="systemsCtrl.selectedSystemOption">
+                  <md-option ng-repeat="systemOption in systemsCtrl.systemOptions" value="{{systemOption.id}}">{{systemOption.name}}</md-option>
+                </md-select>
+
+                <md-select placeholder="Access Type" ng-model="systemsCtrl.selectedAccessType">
+                  <md-option ng-repeat="accessType in systemsCtrl.accessTypes" value="{{accessType.id}}">{{accessType.name}}</md-option>
+                </md-select>
+
+                <md-button>
+                  <span class="fa fa-plus-square"></span>
+                  Add
+                </md-button>
+
               </md-content>
             </md-tab>
             <md-tab label="roles">
