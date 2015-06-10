@@ -8,6 +8,9 @@ md-sidenav.md-closed.md-locked-open-add-active {
 td md-switch {
   margin: 0px !important;
 }
+md-select {
+  padding-bottom: 7px;
+}
 .buttonAlignLeft {
   text-align: left !important;
 }
