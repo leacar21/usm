@@ -8,15 +8,15 @@
     <div flex layout="row">
       <md-content layout="column" layout-padding flex="25">
         <md-whiteframe class="md-whiteframe-z1" layout="column">
-          <md-button class="buttonAlignLeft">
+          <md-button class="buttonAlignLeft" style="{{systemsCtrl.selectedSystemId == 1 ? 'background-color: #3399ff;' : ''}}" ng-click="systemsCtrl.selectSystem(1)">
             <span class=""></span>
             User Security manager
           </md-button>
-          <md-button class="buttonAlignLeft">
+          <md-button class="buttonAlignLeft" style="{{systemsCtrl.selectedSystemId == 2 ? 'background-color: #3399ff;' : ''}}" ng-click="systemsCtrl.selectSystem(2)">
             <span class=""></span>
             Building Manager
           </md-button>
-          <md-button class="buttonAlignLeft">
+          <md-button class="buttonAlignLeft" style="{{systemsCtrl.selectedSystemId == 3 ? 'background-color: #3399ff;' : ''}}" ng-click="systemsCtrl.selectSystem(3)">
             <span class=""></span>
             Bussiness Role Manager
           </md-button>

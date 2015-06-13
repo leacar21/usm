@@ -1,7 +1,6 @@
 (function() {
   'use strict';
 
-
   function AccountsController (Account) {
     this.accounts = Account.query();
   }
@@ -10,6 +9,11 @@
 
     this.selectedSystem = 'System1';
     this.selectedRole = 'Role1';
+
+    this.selectedSystemId = 1;
+    this.selectSystem = function(systemId){
+      this.selectedSystemId = systemId;
+    }
 
     this.systems = System.query();
     this.systemOptions =
