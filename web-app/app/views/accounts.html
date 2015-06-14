@@ -1,13 +1,83 @@
 <div>
   <section>
-    <md-content layout="row" layout-padding >
+    <md-content layout="row" layout-padding>
       <h2>Accounts</h2>
     </md-content>
 
-    <md-content layout="row" layout-padding >
-      <p>
-  			TODO
-      </p>
+    <md-content layout="row" layout-padding>
+      <md-whiteframe class="md-whiteframe-z1" layout="row">
+          <md-input-container>
+            <label>User Name</label>
+            <input ng-model="filterUser.name">
+          </md-input-container>
+          <md-input-container>
+            <label>First Name</label>
+            <input ng-model="filterUser.fisrtName">
+          </md-input-container>
+          <md-input-container>
+            <label>Last Name</label>
+            <input ng-model="filterUser.lastName">
+          </md-input-container>
+          <md-input-container>
+            <label>Email</label>
+            <input ng-model="filterUser.email" type="email">
+          </md-input-container>
+          <md-content layout="row" layout-padding >
+            <md-content layout="column" layout-padding >
+              <md-button class="md-raised">
+                <span class="fa fa-filter"></span>
+                Filter
+              </md-button>
+            </md-content>
+            <md-content layout="column" layout-padding >
+              <md-button class="md-raised">
+                <span class="fa fa-eraser"></span>
+                clear
+              </md-button>
+            </md-content>
+          </md-content>
+      </md-whiteframe>
+    </md-content>
+
+    <md-content layout="row" layout-padding>
+      <md-whiteframe class="md-whiteframe-z1" layout="row">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 200px">User Name</th>
+              <th style="width: 200px">First Name</th>
+              <th style="width: 200px">Last Name</th>
+              <th style="width: 200px">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>lcarrasco.uy</td>
+              <td>Leandro</td>
+              <td>Carrasco</td>
+              <td>carrascoleandro@gmail.com</td>
+            </tr>
+            <tr>
+              <td>bmartinucci.uy</td>
+              <td>Bettina</td>
+              <td>Martinucci</td>
+              <td>bmartinucci@gmail.com</td>
+            </tr>
+            <tr>
+              <td>msanguinetti.uy</td>
+              <td>Martha</td>
+              <td>Sanguinetti</td>
+              <td>sanguinettimartha@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </md-whiteframe>
+    </md-content>
+
+    <md-content layout="row" layout-padding>
+      <md-whiteframe class="md-whiteframe-z1" layout="row">
+        
+      </md-whiteframe>
     </md-content>
   </section>
 </div>
