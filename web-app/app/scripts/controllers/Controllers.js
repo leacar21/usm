@@ -2,6 +2,17 @@
   'use strict';
 
   function AccountsController (Account) {
+
+    this.showUserData = false;
+
+    this.cancelCreateUser = function(){
+      this.showUserData = false;
+    }
+
+    this.createUser = function(){
+
+    }
+
     this.accounts = Account.query();
   }
 

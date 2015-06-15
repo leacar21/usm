@@ -6,29 +6,23 @@
 
     <md-content layout="row" layout-padding >
       <md-whiteframe class="md-whiteframe-z1" layout="row" layout-padding>
-          <md-input-container>
+          <md-input-container style="width:195px;">
             <label>User Name</label>
             <input ng-model="filterUser.name">
           </md-input-container>
-          <md-input-container>
+          <md-input-container style="width:195px;">
             <label>First Name</label>
             <input ng-model="filterUser.fisrtName">
           </md-input-container>
-          <md-input-container>
+          <md-input-container style="width:195px;">
             <label>Last Name</label>
             <input ng-model="filterUser.lastName">
           </md-input-container>
-          <md-input-container>
+          <md-input-container style="width:245px;">
             <label>Email</label>
             <input ng-model="filterUser.email" type="email">
           </md-input-container>
           <md-content layout="row" layout-padding >
-            <md-content layout="column" layout-padding >
-              <md-button class="md-raised">
-                <span class="fa fa-filter"></span>
-                Filter
-              </md-button>
-            </md-content>
             <md-content layout="column" layout-padding >
               <md-button class="md-raised">
                 <span class="fa fa-eraser"></span>
@@ -79,8 +73,50 @@
     </md-content>
 
     <md-content layout="row" layout-padding>
-      <md-whiteframe class="md-whiteframe-z1" layout="row">
+      <md-button class="md-raised" ng-click="accountsCtrl.showUserData = true">
+        <span class="fa fa-user"></span>
+        Create User
+      </md-button>
+    </md-content>
 
+    <md-content layout="row" layout-padding>
+      <md-whiteframe class="md-whiteframe-z1" layout="row">
+        <md-content layout="column" layout-padding class="hg-hide" ng-show="accountsCtrl.showUserData">
+
+          <md-content layout="row" layout-padding>
+            <md-input-container style="width:190px;">
+              <label>User Name</label>
+              <input ng-model="user.name">
+            </md-input-container>
+            <md-input-container style="width:195px;">
+              <label>First Name</label>
+              <input ng-model="user.fisrtName">
+            </md-input-container>
+            <md-input-container style="width:195px;">
+              <label>Last Name</label>
+              <input ng-model="user.lastName">
+            </md-input-container>
+            <md-input-container style="width:245px;">
+              <label>Email</label>
+              <input ng-model="user.email" type="email">
+            </md-input-container>
+            <md-input-container flex id="md-input-container-UserBirthDate">
+              <label>Birth Date</label>
+              <input type="date" ng-model="user.bithDate">
+            </md-input-container>
+          </md-content>
+
+          <md-content layout="row" layout-align="end center" layout-padding>
+            <md-button class="md-raised" ng-click="accountsCtrl.cancelCreateUser()">
+              <span class=""></span>
+              Cancel
+            </md-button>
+            <md-button class="md-raised" ng-click="accountsCtrl.createUser()">
+              <span class=""></span>
+              Create
+            </md-button>
+          </md-content>
+        </md-content>
       </md-whiteframe>
     </md-content>
   </section>
