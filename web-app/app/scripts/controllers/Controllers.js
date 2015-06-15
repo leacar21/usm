@@ -4,13 +4,19 @@
   function AccountsController (Account) {
 
     this.showUserData = false;
+    this.showProgressCircularCreateUser = false;
 
     this.cancelCreateUser = function(){
       this.showUserData = false;
     }
 
     this.createUser = function(){
+      this.showProgressCircularCreateUser = true;
 
+
+
+      this.showProgressCircularCreateUser = false;
+      this.showUserData = false;
     }
 
     this.accounts = Account.query();
