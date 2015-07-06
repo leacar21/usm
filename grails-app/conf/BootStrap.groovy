@@ -11,8 +11,11 @@ class BootStrap {
 		accessTypeView.save()
 		accessTypeCreate.save()
 		
-		SystemOption optionAccountsView = new SystemOption(name: "accounts", accessTypeEnableds: [accessTypeView, accessTypeCreate], system: systemUSM)
+		SystemOption optionAccountsView = new SystemOption(name: "accounts", description: "Accounts Manager", accessTypeEnableds: [accessTypeView, accessTypeCreate], system: systemUSM)
 		optionAccountsView.save()
+		
+		SystemOption optionSystemsView = new SystemOption(name: "systems", description: "Systems Manager", accessTypeEnableds: [accessTypeView, accessTypeCreate], system: systemUSM)
+		optionSystemsView.save()
 
 		Permission permissionAccountsView = new Permission(systemOption: optionAccountsView, accessType: accessTypeView, system: systemUSM)
 		permissionAccountsView.save()
