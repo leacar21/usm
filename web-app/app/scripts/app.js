@@ -3,7 +3,7 @@
 
   //------------------------------------------------------
 
-  angular.module('usm', ['ngMaterial', 'ngRoute', 'usm.controllers']);
+  angular.module('usm', ['ngMaterial', 'ngRoute', 'usm.controllers', 'usm.templates']);
 
   //------------------------------------------------------
 

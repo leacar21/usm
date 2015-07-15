@@ -70,6 +70,43 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('./app'));
 });
 
+var templateCache = require('gulp-angular-templatecache');
+gulp.task('templates', function(){
+  gulp.src('./app/views/**/*.html')
+    .pipe(templateCache({
+      root: 'views/',
+      module: 'usm.templates',
+      standalone: true
+    }))
+    .pipe(gulp.dest('./app/scripts'));
+});
+
+// Concatenación de ficheros css y js
+var gulpif = require('gulp-if');
+var minifyCss = require('gulp-minify-css');
+var useref = require('gulp-useref');
+var uglify = require('gulp-uglify');
+
+gulp.task('compress', function(){
+  gulp.src('./app/index.html')
+    .pipe(useref.assets())
+    .pipe(gulpif('*.js', uglify({mangle: false})))
+    .pipe(gulpif('*.css', minifyCss()))
+    .pipe(gulp.dest('./dist'));
+});
+
+// Copiamos el index.html apuntando a archivos minificados en dist
+// Tambien se copian archivos de fuentes
+gulp.task('copy', function(){
+  gulp.src('./app/index.html')
+    .pipe(useref())
+    .pipe(gulp.dest('./dist'))
+  gulp.src('./app/lib/fontawesome/fonts/**')
+    .pipe(gulp.dest('./dist/fonts'));
+});
+
+gulp.task('build', ['templates', 'compress', 'copy']);
+
 // Vigila cambios que se produzcan en el código
 // y lanza las tareas relacionadas
 gulp.task('watch', function() {
